@@ -333,18 +333,18 @@ try {
 
 ### caughtErrorsIgnorePattern
 
-The `caughtErrorsIgnorePattern` option specifies exceptions not to check for usage: catch arguments whose names match a regexp pattern. For example, variables whose names begin with a string 'ignore'.
+The `caughtErrorsIgnorePattern` option specifies exceptions not to check for usage: catch arguments whose names match a regexp pattern. For example, variables whose names begin with an underscore.
 
-Examples of **correct** code for the `{ "caughtErrorsIgnorePattern": "^ignore" }` option:
+Examples of **correct** code for the `{ "caughtErrorsIgnorePattern": "^_" }` option:
 
 ::: correct
 
 ```js
-/*eslint no-unused-vars: ["error", { "caughtErrors": "all", "caughtErrorsIgnorePattern": "^ignore" }]*/
+/*eslint no-unused-vars: ["error", { "caughtErrors": "all", "caughtErrorsIgnorePattern": "^_" }]*/
 
 try {
     //...
-} catch (ignoreErr) {
+} catch (_) {
     console.error("errors");
 }
 ```
